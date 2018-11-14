@@ -19,8 +19,13 @@ class Battle < Sinatra::Base
   get '/play' do
     @your_name = session[:your_name]
     @enemy_name = session[:enemy_name]
-    @enemy_hit_points = session[:enemy_hit_points]
     erb(:play)
+  end
+
+  get '/attack' do
+    @your_name = session[:your_name]
+    @enemy_name = session[:enemy_name]
+    erb(:destroy)
   end
 
   run! if app_file == $0
