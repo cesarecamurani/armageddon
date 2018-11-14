@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "capybara"
+require "./lib/player"
 
 class Battle < Sinatra::Base
 
@@ -10,21 +11,20 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:your_name] = params[:your_name]
-    session[:enemy_name] = params[:enemy_name]
-    session[:enemy_hit_points] = params[:enemy_hit_points]
+    $player_1 = Player.new(params[:player_1])
+    $player_2 = Player.new(params[:player_2])
     redirect '/play'
   end
 
   get '/play' do
-    @your_name = session[:your_name]
-    @enemy_name = session[:enemy_name]
+    @player_1 = $player_1.name
+    @player_2 = $player_2.name
     erb(:play)
   end
 
   get '/attack' do
-    @your_name = session[:your_name]
-    @enemy_name = session[:enemy_name]
+    @player_1 = $player_1.name
+    @player_2 = $player_2.name
     erb(:destroy)
   end
 

@@ -1,7 +1,7 @@
 def sign_in_and_play
   visit('/')
-  fill_in('your_name', with: 'Cesare')
-  fill_in('enemy_name', with: 'Satan')
+  fill_in('player_1', with: 'Cesare')
+  fill_in('player_2', with: 'Satan')
   click_button("Start the War!")
 end
 
