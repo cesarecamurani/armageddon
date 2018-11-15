@@ -27,6 +27,11 @@ class Battle < Sinatra::Base
     erb(:destroy)
   end
 
+  get '/lost_page' do
+    @game = $game
+    @game.current_turn
+    erb(:lost_page)
+  end
 
   run! if app_file == $0
 

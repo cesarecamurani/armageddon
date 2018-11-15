@@ -4,3 +4,8 @@
 <center><h1>VS</h1></center>
 <center><h1> <%=@game.player_2.name%> <%=@game.player_2.health%> HP</h1></center>
 <center><form action="/destroy"><input type="submit" value="Destroy!"></form></center>
+<br><br>
+<center><h3><a href="/">Restart the game</a></center></h3>
+<% if @game.current_turn.lost? %>
+<% redirect '/lost_page' %>
+<% end %>

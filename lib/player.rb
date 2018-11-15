@@ -13,4 +13,8 @@ class Player
     @health -= DAMAGE
   end
 
+  def lost?
+    self.health <= 0
+  end
+
 end

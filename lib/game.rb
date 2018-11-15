@@ -10,6 +10,7 @@ class Game
   end
 
   def destroy(player)
+    player.lost?
     player.receive_damage
   end
 
