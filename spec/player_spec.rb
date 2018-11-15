@@ -16,16 +16,16 @@ feature Player do
     end
   end
 
-  feature '#destroy' do
-    scenario "Weakens your enemy" do
-      expect(player_2).to receive(:receive_damage)
-      player_1.destroy(player_2)
-    end
-  end
+  # feature '#destroy' do
+  #   scenario "Weakens your enemy" do
+  #     expect(player_2).to receive(:receive_damage)
+  #     player_1.destroy(player_2)
+  #   end
+  # end
 
   feature '#receive_damage' do
     scenario "Reduces the enemy's health by 20 points" do
-      expect { player_2.receive_damage }.to change { player_2.health }.by(-20) 
+      expect { player_2.receive_damage }.to change { player_2.health }.by(-20)
     end
   end
 

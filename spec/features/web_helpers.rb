@@ -5,7 +5,7 @@ def sign_in_and_play
   click_button("Start the War!")
 end
 
-def attack
-  sign_in_and_play
-  click_button("Destroy")
-end
+# def attack
+#   sign_in_and_play
+#   click_button("Destroy")
+# end

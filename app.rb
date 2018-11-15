@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "capybara"
 require "./lib/player"
+require "./lib/game"
 
 class Battle < Sinatra::Base
 
@@ -25,7 +26,7 @@ class Battle < Sinatra::Base
   get '/destroy' do
     @player_1 = $player_1
     @player_2 = $player_2
-    @player_1.destroy(@player_2)
+    Game.new.destroy(@player_2)
     erb(:destroy)
   end
 
