@@ -4,8 +4,3 @@ def sign_in_and_play
   fill_in('player_2', with: 'Satan')
   click_button("Start the War!")
 end
-
-# def attack
-#   sign_in_and_play
-#   click_button("Destroy")
-# end

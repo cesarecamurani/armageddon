@@ -23,7 +23,7 @@ class Battle < Sinatra::Base
 
   get '/destroy' do
     @game = $game
-    @game.destroy(@game.player_2)
+    @game.destroy(@game.switch_turn)
     erb(:destroy)
   end
 

@@ -24,6 +24,20 @@ feature Game do
     end
   end
 
+  feature '#switch_turn' do
+    scenario "Enables the other player to attack" do
+      expect(game.current_turn).to eq cesare
+      game.switch_turn
+      expect(game.current_turn).to eq luca
+    end
+  end
+
+  feature '#current_turn' do
+    scenario "Shows the current turn" do
+      expect(game.current_turn).to eq cesare
+    end
+  end
+
 
 
 end
