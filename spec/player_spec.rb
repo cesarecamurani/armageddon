@@ -24,7 +24,7 @@ feature Player do
     end
   end
 
-  feature '#lost' do
+  feature '#lost?' do
     scenario "Shows a You lost message" do
       allow(player_1).to receive(:health) { 0 }
       expect(player_1.lost?).to eq true

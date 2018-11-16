@@ -12,24 +12,24 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player_1]), Player.new(params[:player_2]))
+    @civ_game = Game.create(Player.new(params[:player_1]), Player.new(params[:player_2]))
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @civ_game = Game.instance
     erb(:play)
   end
 
   get '/destroy' do
-    @game = $game
-    @game.destroy(@game.switch_turn)
+    @civ_game = Game.instance
+    @civ_game.destroy(@civ_game.switch_turn)
     erb(:destroy)
   end
 
   get '/lost_page' do
-    @game = $game
-    @game.current_turn
+    @civ_game = Game.instance
+    @civ_game.current_turn
     erb(:lost_page)
   end
 

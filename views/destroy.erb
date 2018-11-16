@@ -1,14 +1,14 @@
 
 <body style="background-color:green;">
 <center><h1><font face="verdana"> ARMAGEDDON </font></h1></center>
-<center><h2><font face="verdana"> <%=@game.current_turn.name%> turn</font></h2></center><br><br>
-<center><h1><font face="verdana"> <%=@game.player_1.name%> <%=@game.player_1.health%> HP</font></h1></center>
+<center><h2><font face="verdana"> <%=@civ_game.current_turn.name%> turn</font></h2></center><br><br>
+<center><h1><font face="verdana"> <%=@civ_game.player_1.name%> <%=@civ_game.player_1.health%> HP</font></h1></center>
 <center><h1><font face="verdana">VS</font></h1></center>
-<center><h1><font face="verdana"> <%=@game.player_2.name%> <%=@game.player_2.health%> HP</font></h1></center>
+<center><h1><font face="verdana"> <%=@civ_game.player_2.name%> <%=@civ_game.player_2.health%> HP</font></h1></center>
 <center><form action="/destroy"><input type="submit" font="verdana" value="Destroy!"></form></center>
 <br><br>
 <center><h3><font face="verdana"><a href="/">Restart the game</font></a></center></h3>
-<% if @game.current_turn.lost? %>
+<% if @civ_game.current_turn.lost? %>
 <% redirect '/lost_page' %>
 <% end %>
 </body>
